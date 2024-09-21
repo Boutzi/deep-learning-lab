@@ -1,4 +1,4 @@
-# My Deep Learning Project
+# Deep Learning Lab
 
 ## Overview
 
