@@ -1,0 +1,54 @@
+# Python-specific ignores
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.egg
+*.egg-info/
+.eggs/
+*.log
+
+# Virtual environment
+env/
+venv/
+ENV/
+VENV/
+*.env
+*.venv
+
+# Jupyter Notebooks checkpoints
+.ipynb_checkpoints/
+
+# Data files (raw and processed data)
+data/raw/
+data/processed/
+
+# Saved models (can be large)
+saved_models/
+*.h5
+*.ckpt
+
+# TensorBoard log files
+logs/
+tensorboard_logs/
+
+# Configurations
+*.yaml
+*.yml
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Package dependencies
+*.lock
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Pytest cache
+.pytest_cache/
+
+# VSCode settings
+.vscode/
+desktop.ini
