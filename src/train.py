@@ -1,14 +1,12 @@
 import os
 import json
 import numpy as np
-from data_loader import load_data
+from data_loader import load_data_3
 from model import build_model
 from tensorflow.keras.models import load_model
 
-training_name = "apprentissage de x * 2"
-json_file = "c:/Users/Boutzi/Documents/Work/Dev/Git/deep-learning-lab/data/processed/training_info.json"
-
-def update_training_info(new_epochs):
+def update_training_info(new_epochs, training_name):
+    json_file = f"c:/Users/Boutzi/Documents/Work/Dev/Git/deep-learning-lab/data/training/{training_name}.json"
     if os.path.exists(json_file):
         with open(json_file, 'r') as f:
             training_info = json.load(f)
@@ -24,18 +22,18 @@ def update_training_info(new_epochs):
     print(f"Total epochs for '{training_info['training']}': {training_info['epochs']}")
 
 def continue_training(model):
-    train_data_input, train_data_output = load_data()
+    training_name, train_data_input, train_data_output = load_data_3()
     train_data_input = np.array(train_data_input).reshape(-1, 1)
     train_data_output = np.array(train_data_output).reshape(-1, 1)
 
-    new_epochs = 1000
+    new_epochs = 10000
     model.fit(x=train_data_input, y=train_data_output, epochs=new_epochs)
 
-    update_training_info(new_epochs)
+    update_training_info(new_epochs, training_name)
     model.save("c:/Users/Boutzi/Documents/Work/Dev/Git/deep-learning-lab/saved_models/my_model.keras")
 
 def train():
-    train_data_input, train_data_output = load_data()
+    train_data_input, train_data_output = load_data_3()
     train_data_input = np.array(train_data_input).reshape(-1, 1)
     train_data_output = np.array(train_data_output).reshape(-1, 1)
 

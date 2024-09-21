@@ -1,0 +1,4 @@
+{
+    "training": "celcius_to_fahrenheit",
+    "epochs": 10000
+}
