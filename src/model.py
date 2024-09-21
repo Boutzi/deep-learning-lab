@@ -1,9 +1,10 @@
-from tensorflow.keras import layers, models
+from keras import Sequential, layers, Input
 
 def build_model():
-    model = models.Sequential()
-    model.add(layers.Dense(units=3, input_shape=[1], activation='relu'))
-    model.add(layers.Dense(units=64, activation='relu'))
-    model.add(layers.Dense(units=1))  # Output layer
+    model = Sequential()
+    model.add(Input(shape=(1,)))
+    model.add(layers.Dense(units=3))
+    model.add(layers.Dense(units=64))
+    model.add(layers.Dense(units=1))
     model.compile(optimizer='adam', loss='mse')
     return model
